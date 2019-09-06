@@ -1,0 +1,486 @@
+% "Станет проще"
+
+\documentclass[a4paper,12pt]{article} % тип документа
+
+% report, book
+
+% Рисунки
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\usepackage{hyperref}
+\usepackage[rgb]{xcolor}
+
+
+
+%  Русский язык
+
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+
+% Математика
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+
+
+\usepackage{wasysym}
+
+%Заговолок
+\author{Дерзай знать}
+\title{Общие принципы и математика в \LaTeX{}}
+\date{\today}
+
+
+
+
+
+\begin{document} % начало документа
+
+\maketitle
+
+
+\newpage
+\section{Цель работы:}
+1) измерение количества подведенного тепла и вызванного им нагрева твердого тела; 2)определение теплоемкости по экстраполяции отношения  $\triangle Q / \triangle T$ к нулевым потерям тепла.\\
+\section{В работе используются:}
+ калориметр с нагревателем и термометром сопротивления; амперметр; вольтметр; мост постоянного тока; источник питания 36 В.
+ \section*{Описание работы}\
+\indent В предлагаемой работе измерение теплоемкости твердых тел про- изводится по обычной схеме. Исследуемое тело помещается в кало- риметр. Измеряется $\Delta Q$ — количество тепла, подведенного к телу, и $\Delta T$ — изменение температуры тела, произошедшее в результате подвода тепла. Теплоемкость определяется по формуле\\
+$$C=\frac{\Delta Q}{\Delta T}=\frac{P\Delta t - \lambda (T-T_k)\Delta t}{\Delta T}=\frac{P - \lambda (T-T_k)}{\Delta T/\Delta t}$$
+\ \\
+$\frac{\Delta T}{\Delta t}=f(T)$ -строим график и проводим касательную при $T=T_k$\\
+\ \\
+Тогда $C=\frac{P}{(\Delta T/\Delta t)_k}$\\
+Дополнительно $R_t=R_o(1+\alpha\Delta T)$; $\frac{dR}{dt}=R_o\alpha\frac{dT}{dt}$\\
+$$C=\frac{PR_k\alpha}{(dR/dt)_k(1+\alpha\Delta T_k)}$$
+\ \\
+\newpage
+\section{Экспериментальная установка:}
+\includegraphics[scale=0.7]{ust}
+\section{Ход работы}
+1) Подготовим мост постоянного тока и определим R при комнатной температуре:
+
+\textit{R}= 18.04$\Omega$
+
+$T_k$= $28^{\circ}$C
+
+$\alpha$ = 4.28*$10^{-3} K^{-1}$
+
+$R_0$= 18.5$\Omega$
+
+2) Включим источник тока и снимем зависимость сопротивления термометра от времени для пустого калориметра, а также с латунью и алюминием внутри. Для этого проверим балансировку моста и установим на нем сопротивление, немного большее ($\sim$0.5\%) чем это необходимо для балансировки.
+
+3) Показания запишем в таблицы:
+
+
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Пустой калориметр} \\
+\hline 
+R, $\Omega$ & t, c \\ 
+\hline
+18.37 & 0 \\
+\hline 
+18.46 & 69 \\ 
+\hline 
+18.68 & 245 \\ 
+\hline 
+18.77 & 330 \\ 
+\hline 
+18.86 & 452 \\ 
+\hline 
+18.95 & 551 \\ 
+\hline 
+19.04 & 674 \\ 
+\hline 
+19.14 & 810 \\ 
+\hline 
+19.24 & 943 \\ 
+\hline 
+19.34 & 1092 \\ 
+
+\hline 
+\end{tabular} 
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Латунь      } \\
+\hline
+R, $\Omega$ & t, c \\ 
+\hline 
+18.65 & 0 \\ 
+\hline 
+18.74 & 53 \\ 
+\hline 
+18.83 & 187 \\ 
+\hline 
+18.92 & 350 \\ 
+\hline 
+19.01 & 497 \\ 
+\hline 
+19.11 & 673 \\ 
+\hline 
+19.21 & 864 \\ 
+\hline 
+19.31 & 1108 \\ 
+\hline 
+19.41 & • \\ 
+\hline 
+\end{tabular} 
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Алюминий      } \\
+\hline
+R, $\Omega$ & t, c \\ 
+\hline 
+18.53 & 0 \\ 
+\hline 
+18.62 & 114 \\ 
+\hline 
+18.71 & 210 \\ 
+\hline 
+18.80 & 354 \\ 
+\hline 
+18.89 & 471 \\ 
+\hline 
+18.98 & 636 \\ 
+\hline 
+19.07 & 807 \\ 
+\hline 
+19.17 & 955 \\ 
+\hline 
+19.27 & 1159 \\ 
+\hline 
+19.36 & 1316 \\ 
+\hline 
+19.46 & 1566 \\ 
+\hline 
+\end{tabular} 
+
+3) Построим графики по данным таблицам:\\[0.2cm]
+\begin{center}
+\includegraphics[scale=0.35]{2141}
+\end{center}
+\newpage
+\begin{center}
+\includegraphics[scale=0.35]{2142}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.35]{2143}
+\end{center}
+\newpage
+4) Используя полученные зависимости, построим графики зависимости $\frac{\triangle R} {\triangle t}$ от R
+
+5) Для этого разделим кривые на отрезки и найдем для каждого из них коэффицент наклона. 
+
+Получили:\\[0.2cm]
+\begin{center}
+\includegraphics[scale=0.35]{2144}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.35]{2145}
+\end{center}
+\begin{center}
+\includegraphics[scale=0.35]{2146}
+\end{center}
+
+6) Посчитаем для каждого из получнных графиков теплоемкость по формуле: $$C=\frac{PR_k\alpha}{(dR/dt)_k(1+\alpha\Delta T_k)}$$
+
+$C_0$=455 $\frac{Joule}{K}$
+
+$C_1$=666 $\frac{Joule}{K}$
+
+$C_2$=931 $\frac{Joule}{K}$
+
+Зная, что массы тел из латуни и алюминия равны соответственно 878$\pm$0.1 g и  294.7$\pm$0.1 g  получаем: 
+
+$C_L$=240$\pm$0.3 $\frac{Joule}{K*kg}$ \hspace{40pt} $C_L$(Tabl)=377 $\frac{Joule}{K*kg}$
+
+$C_{Al}$=1615$\pm$0.3 $\frac{Joule}{K*kg}$ \hspace{31pt} $C_{Al}$(Tabl)=897 $\frac{Joule}{K*kg}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Наша первая строчка.\\[2cm]
+Вторая \hspace{20pt} строчка.
+
+Важное можно выделить \textbf{жирным}
+
+Эстеты могут воспользоваться \textit{курсивом}
+
+Прагматичные могут \underline{подчеркнуть}
+
+Можно даже \fbox{в рамочку}
+
+Дефис -- не тире.
+
+Кавычки это не Shift+2. Кавычки это <<так>>
+
+\section{Мир формул}
+
+Наша первая формула $100+100=200$, ага.
+
+\[ 100+100=200 \]
+
+\begin{equation}\label{pifagor}
+a^2+b^2=c^2
+\end{equation}
+
+Теорему Пифагора \eqref{pifagor} вы знаете с 8 класса\footnote{Определенно знали}. Эта теорема упоминается на странице \pageref{pifagor}.
+
+\subsection{Дроби}
+
+$\frac{1}{3}+\frac{1}{3}=\frac{2}{3}$. Вот вам и дроби\footnote{А это с пятого класса.}. {\scriptsize Так некрасиво.} {\Large Красиво так}:
+
+\[ \frac{1}{3}+\frac{1}{3}=\frac{2}{3} \]
+
+
+\subsection{Скобки}
+
+\[ (2+3)\cdot 5=25 \]
+
+\[ \left[\frac{4}{2}+3\right]\cdot 5=25 \]
+
+\[ \{2+3\}\cdot 5=25 \]
+
+\subsection{Индексы}
+
+\[ m_1, m_{12}, c^2, c^{22} \]
+
+\subsection{Стандартные функции}
+
+\[ \sin x=0 \]
+\[ \arctg x=\sqrt[5]{3} \]
+\[ \log_{x-1}{(x^2-3x-4)}\geqslant 2 \]
+\[ \lg 10=\ln e \]
+
+\subsection{Функции покрупнее}
+
+$\sum_{i=1}^{n}a_i+b_i$
+
+\[ \sum_{i=1}^{n}a_i+b_i \]
+
+$I=\int r^2dm$
+
+\[I=\int r^2dm \]
+
+\[I=\int_{0}^{1} r^2dm \]
+
+\[I=\int\limits_{0}^{1} r^2dm \]
+
+\subsection{Символы}
+
+\[2\times 2\neq 5 \]
+
+\[x \cap y,  x \cup y\]
+
+\[x\in (-\infty; 0),\]
+
+\[ \triangle ABC = \triangle A_1B_1C_1 \Rightarrow \angle A= \angle A_1\]
+
+\smiley
+
+
+\newpage
+
+\begin{center}
+Вторая часть! Ура!!!
+\end{center}
+
+\begin{flushright}
+Мы надеемся, что вы уже активно готовитесь к сдаче коллоквиума и вовсю смотрите программу <<Мама, я Гейне!>>. Потому что если нет, то Таежный брат Владислав вас найдет. Так что вперед.
+\end{flushright}
+
+\begin{itemize}
+\item Общие вопросы;
+\item Работа с текстом;
+\item Математика
+\begin{itemize}
+\item Дроби;
+\item Скобки;
+\item Многое другое
+\end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+
+
+\item Общие вопросы;
+\item Математика
+\item Работа с текстом;
+
+\begin{itemize}
+\item Дроби;
+\item Скобки;
+\item Многое другое
+\end{itemize}
+\end{enumerate}
+
+
+\subsection{Диакритические знаки}
+
+\[ \dot{x}=0, \]
+\[ \tilde{a}=\overline{bcde}, \]
+\[ \overrightarrow{a} (0,3,4), \]
+\[ \underbrace{1+2+3+\dots+n}_{n}=N, \]
+\[ (x-1)(x+1)>0 \stackrel{x>0}{\Longleftrightarrow} x-1>0, \]
+
+
+\subsection{Буквы других алфавитов и математические шрифты}
+
+\[ \sin \alpha = 0, \]
+\[ \omega = \frac{2\pi}{T}, \]
+\[ \epsilon, \varepsilon, \varphi \]
+\[ \overrightarrow{a}=\mathbf{a}, \]
+\[ x\in R, \]
+\[ x\in \mathbb{R}, \]
+\[ m_{\text{груза}}= 15~\text{кг} \]
+
+
+\subsection{Матрицы}
+
+\[ \begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23}
+\end{pmatrix} \]
+
+\[ \begin{bmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23}
+\end{bmatrix} \]
+
+\[ \begin{Vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23}
+\end{Vmatrix} \]
+
+\[ \begin{vmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{vmatrix} \]
+
+\section{Группировка формул}
+
+\begin{equation}
+\begin{aligned}
+2 &\times a=4,\\
+-3 &\times b = 6,\\
+-100 &\times c = 110.
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+2 &\times a=4, & &3 \times x=11,\\
+-3 &\times b = 6, & &-123 \times y =123,\\
+-100 &\times c = 110, & &-100z=0. 
+\end{aligned}
+\end{equation}
+
+\[  \left\{
+\begin{aligned}
+&2 \times a=4,\\
+&-3 \times b = 6,\\
+&-100 \times c = 110.
+\end{aligned} \right.
+\]
+
+\[  \left[
+\begin{aligned}
+&2 \times a=4,\\
+&-3 \times b = 6,\\
+&-100 \times c = 110.
+\end{aligned} \right.
+\]
+
+\[  \left.
+\begin{aligned}
+2 \times a=4&\\
+-3 \times b = 6&\\
+-100 \times c = 110&
+\end{aligned} \right\} \Rightarrow -6ab=24
+\]
+
+
+
+
+\begin{figure}[h!]
+\begin{center}
+\end{center}
+\caption{Дерзай знать!} \label{dz1}
+\end{figure}
+
+Наш логотип представлен на рисунке \ref{dz1}
+
+
+\begin{figure}[h!]
+\begin{center}
+
+\end{center}
+\caption{Дерзай знать!} \label{dz2}
+\end{figure}
+
+Наш векторный логотип представлен на рисунке \ref{dz2}
+
+% растровые (jpg, png,...)
+% векторные (pdf, eps, cdr,...)
+
+\newpage
+
+\section{Таблицы}
+
+\begin{table}
+\caption{Погрешности}
+\begin{tabular}{|c|c|rp{5cm}|}
+\hline 
+\multicolumn{3}{|c|}{Погрешности} &  Подробнейший комментарий нашего дорогого Таежного брата\\ 
+\hline \hline 
+Систематическая & Случайная & Итог & \\ 
+
+$\sigma_1=0,04$ & $\sigma_2=0,03$ & $\sigma=0,05$ & \\ 
+\hline 
+\end{tabular} 
+\end{table}
+
+\section{Картинки и таблицы в тексте}
+\begin{wrapfigure}{l}{6cm}
+
+\caption{Таежный брат}
+\end{wrapfigure} Юрлов Владислав Витальевич, дата рождения: 31.10.1997, паспорт: серия 2434 номер 1212121, проживает по адресу Москва, улица Тверская, дом 1, кв 789, прописан по адресу: США, Нью-Йорк, Бродвей, дом 156, квартира 457. Судимостей не имеет, справка о состоянии здоровья предоставлена. Подано заявление о приеме на работу в качестве совместителя, на должность ведущего <<Мама, я Гейне!>> Основное место работы: ведущий консультант Tesla Motors, США. Прилагаются рекомендации о приеме на работу от: Илон Маск, Дональд Трамп. 
+
+\begin{wraptable}{r}{3cm}
+\begin{tabular}{|c|c|c|}
+\hline 
+$A$ & $B$ & $C$ \\ 
+\hline 
+1 & 2 & 3 \\ 
+\hline 
+\end{tabular} 
+\caption{Бесполезная таблица}
+\end{wraptable} Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. Бесполезная таблица. 
+
+\listoffigures
+\listoftables
+
+\section{Ссылки}
+
+\begin{itemize}
+\item С.М. Львовский. \LaTeX : подробное описание;
+\item Топовый \href{https://www.coursera.org/learn/latex}{курс} от ВШЭ.
+\end{itemize}
+
+
+\end{document} % конец документа
